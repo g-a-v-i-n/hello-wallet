@@ -1,5 +1,5 @@
 import {useState, useMemo} from 'react'
-// import * as Dialog from '@radix-ui/react-dialog';
+import * as Tooltip from '@radix-ui/react-tooltip';
 
 // import QRCodeStyling from 'qr-code-styling'
 import { Wallet } from 'ethers'
@@ -25,6 +25,7 @@ const ContentEditable = ({ as, style={}, className="", iconClassName="", initial
     style,
     className,
     suppressContentEditableWarning: true,
+    // Removes rich text styles from clipboard text
     onPaste: (e) => {
       // Cancel paste
       e.preventDefault();
@@ -36,7 +37,7 @@ const ContentEditable = ({ as, style={}, className="", iconClassName="", initial
   }
 
   return (
-      <div className="relative">
+      <div className="relative hover-target-icon-edit-text">
         <div className={`absolute icon-edit-text no-print -left-11 z-10 h-10 w-10 ${iconClassName}`} />
         <Component {...props}>
           { initialValue }
@@ -57,11 +58,12 @@ function App() {
 
   const date = new Date().toLocaleDateString("en-US")
   const version = process.env.REACT_APP_VERSION
-  const source = process.env.REACT_APP_REPO_URL
+  const source = 'https://github.com/g-a-v-i-n/hello-wallet'
   
   const [wallet, setWallet] = useState(_wallet)
 
   return (
+    <Tooltip.Provider delayDuration={800} skipDelayDuration={500}>
     <div className="flex w-full items-center justify-center relative">
 
     <div className="fixed bottom-0 left-0 flex justify-center w-full p-8 z-20 no-print">
@@ -72,6 +74,18 @@ function App() {
 
       <div className="fixed top-0 left-0 flex justify-center w-full p-6 z-20 no-print">
         <nav className="flex bg-white py-5 px-6 rounded-full smooth-shadow-md border border-gray-300">
+        {/* <Tooltip.Root>
+          <Tooltip.Trigger
+            className="mr-7" 
+            onClick={() => setWallet(Wallet.createRandom())}>
+              <div className="icon-cycle w-6 h-6 mr-1"/>
+              New
+          </Tooltip.Trigger>
+          <Tooltip.Content className="p-4 rounded-lg bg-gray-200 shadow-md">
+            <Tooltip.Arrow />
+            <h2>Cycling the Wallet</h2>
+          </Tooltip.Content>
+        </Tooltip.Root> */}
           <button
             className="mr-7" 
             onClick={() => setWallet(Wallet.createRandom())}>
@@ -171,6 +185,7 @@ function App() {
         </div>
       </div>
       </div>
+      </Tooltip.Provider>
   );
 }
 

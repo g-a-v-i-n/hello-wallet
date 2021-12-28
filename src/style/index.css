@@ -183,6 +183,14 @@ button, .button {
   @apply bg-center bg-no-repeat bg-contain;
 }
 
+.hover-target-icon-edit-text .icon-edit-text {
+  transition: 100ms transform;
+}
+
+.hover-target-icon-edit-text:hover .icon-edit-text {
+  transform: translateX(4px)
+}
+
 *[contenteditable="true"] {
   @apply relative border-transparent transition-colors -m-2 p-2 outline-none rounded-xl;
 }
