@@ -31,13 +31,13 @@ const defaults = {
 //   return blob
 // }
 
-const HighlightInput = ({ as, style={}, className="", value, onChange }) => {
+const ContentEditable = ({ as, style={}, className="", value, onChange }) => {
   const Component = as;
 
   const props = {
     contentEditable: "true",
     style: style,
-    className: "highlight",
+    className: "editable",
     onChange: e => onChange(e.target.value),
     type: 'text',
   }
@@ -106,11 +106,11 @@ function App() {
         <div className="absolute bg-white page-size">
         <div className="p-6">
           <div className="border-lg border-black w-full rounded-4xl p-6">
-            <HighlightInput as={'h1'} value={title} onChange={setTitle} />
+            <ContentEditable as='h1' value={title} onChange={setTitle} />
             <div className="flex mb-6">
               <div className="w-full pr-6">
                 <h2 className="my-3">Notes</h2>
-                <HighlightInput as={'p'} value={description} onChange={setDescription} />
+                <ContentEditable as='p' value={description} onChange={setDescription} />
               </div>
               <div className="w-full flex pl-6">
                 <div className="mr-2 w-full">
