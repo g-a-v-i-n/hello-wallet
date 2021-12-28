@@ -36,8 +36,12 @@ const ContentEditable = ({ as, style={}, className="", value, onChange }) => {
 
   const props = {
     contentEditable: "true",
+    autoComplete: "off",
+    autoCorrect: "off",
+    autoCapitalize: "off",
     style: style,
-    className: "editable",
+    className: `editable ${className}`,
+    suppressContentEditableWarning: true,
     onChange: e => onChange(e.target.value),
     type: 'text',
   }
@@ -114,7 +118,7 @@ function App() {
               </div>
               <div className="w-full flex pl-6">
                 <div className="mr-2 w-full">
-                  <h2 className="my-3">Metdata</h2>
+                  <h2 className="my-3">Metadata</h2>
                   <h3>Type</h3>
                   <p>Ethereum</p>
                   <h3 className="mt-3">Date Created</h3>

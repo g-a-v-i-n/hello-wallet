@@ -4,6 +4,11 @@
 
 @font-face {
   font-family: "SF Pro Rounded";
+  src: url("./fonts/SFNSRounded.woff2") format("woff2");
+}
+
+/* @font-face {
+  font-family: "SF Pro Rounded";
   src: url("./fonts/SF-Pro-Rounded-Black.otf") format("opentype");
   font-weight: 900;
 }
@@ -30,7 +35,7 @@
   font-family: "SF Pro Rounded";
   src: url("./fonts/SF-Pro-Rounded-Medium.otf") format("opentype");
   font-weight: 500;
-}
+} */
 
 /* @font-face {
   font-family: "SF Pro Rounded";
@@ -58,7 +63,7 @@
 
 
 html, body {
-  font-family: 'SF Pro Rounded', -apple-system, sans-serif;
+  font-family: "SF Pro Rounded", ui-rounded, system-ui, sans-serif;
   background-color: #EEE;
 }
 
@@ -97,34 +102,40 @@ html, body {
 
 h1, .h1 {
   font-weight: 900;
+  font-variation-settings: "GRAD" 0, "wght" 900;
   font-size: 32px;
   line-height: 48px;
 }
 
 h2, .h2 {
-  font-weight: 800; 
+  font-weight: 800;
+  font-variation-settings: "GRAD" 0, "wght" 800;
   font-size: 16px; 
   line-height: 32px; 
 }
 
 h3, .h3 {
-  font-weight: 800; 
+  font-weight: 800;
+  font-variation-settings: "GRAD" 0, "wght" 800;
   font-size: 12px; 
   line-height: 16px; 
 }
 
 p, .p {
-  font-weight: 500; 
+  font-weight: 500;
+  font-variation-settings: "GRAD" 0, "wght" 500;
   font-size: 13px; 
   line-height: 17px; 
 }
 
 b {
-  font-weight: 600;
+  font-weight: 700;
+  font-variation-settings: "GRAD" 0, "wght" 700;
 }
 
 pre, .pre {
-  font-weight: 500; 
+  font-weight: 500;
+  font-variation-settings: "GRAD" 0, "wght" 500;
   font-size: 18px; 
   line-height: 24px;
   font-family: 'SF Mono', monospace;
@@ -133,18 +144,23 @@ pre, .pre {
 
 label, .label {
   display: block;
-  font-weight: 800; 
+  font-weight: 800;
+  font-variation-settings: "GRAD" 0, "wght" 800;
   font-size: 10px; 
   line-height: 20px;
   @apply px-1.5 rounded-full;
 }
 
 button, .button {
-  @apply px-4 py-2 bg-gray-100 rounded-full border border-gray-200 hover:bg-gray-200 font-semibold;
+  font-weight: 500;
+  font-variation-settings: "GRAD" 0, "wght" 500;
+  @apply px-4 py-2 bg-gray-100 rounded-full border border-gray-200 hover:bg-gray-200;
 }
 
 button.button-round {
-  @apply p-0 w-10 h-10 bg-gray-50 rounded-full border border-gray-200 hover:bg-gray-200 font-semibold;
+  font-weight: 500;
+  font-variation-settings: "GRAD" 0, "wght" 500;
+  @apply p-0 w-10 h-10 bg-gray-50 rounded-full border border-gray-200 hover:bg-gray-200;
 }
 
 .smooth-shadow-sm {
