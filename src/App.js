@@ -1,5 +1,5 @@
 import {useState, useMemo} from 'react'
-import * as Dialog from '@radix-ui/react-dialog';
+// import * as Dialog from '@radix-ui/react-dialog';
 
 // import QRCodeStyling from 'qr-code-styling'
 import { Wallet } from 'ethers'
@@ -53,15 +53,13 @@ function App() {
   const predicate = capitalizeFirstLetter(randomChoice(words.predicates))
   const object = capitalizeFirstLetter(randomChoice(words.objects))
 
-  const randomTitle = predicate + ' ' + object + ' ' + 'Wallet'
+  const randomTitle = `${predicate} ${object} Wallet`
 
   const date = new Date().toLocaleDateString("en-US")
   const version = process.env.REACT_APP_VERSION
   const source = process.env.REACT_APP_REPO_URL
   
   const [wallet, setWallet] = useState(_wallet)
-
-  console.log(setWallet)
 
   return (
     <div className="flex w-full items-center justify-center relative">

@@ -2,11 +2,11 @@
 
 [Try it.](https://hello-wallet.vercel.app/)
 
-Have you ever wanted to make a paper wallet but they look like this?
+Have you ever wanted to make a paper wallet but they all look like this?
 
 ![](https://github.com/g-a-v-i-n/hello-wallet/blob/master/docs/etherwallet3.png?raw=true)
 
-Using the latest graphic design technology it is possible to make a nicer looking wallet.
+Using the latest graphic design technology it is possible to make a nicer paper wallet.
 
 ## Development
 
