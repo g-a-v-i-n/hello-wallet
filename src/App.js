@@ -1,7 +1,11 @@
 import {useState, useMemo} from 'react'
+import * as Dialog from '@radix-ui/react-dialog';
+
 // import QRCodeStyling from 'qr-code-styling'
 import { Wallet } from 'ethers'
-
+import words from './lib/words.json'
+import { randomChoice } from './lib/random'
+import { capitalizeFirstLetter } from './lib/strings'
 
 
 const defaults = {
@@ -9,29 +13,8 @@ const defaults = {
   description: "Hi! Hello Wallet is a paper wallet you can edit in browser. Physical wallets were long considered one of the safest ways to store crypto. If properly constructed, and provided that certain precautions are taken, it will be nearly impossible for a hostile user to access your crypto holdings. A paper wallet is considered an extremely secure way to keep crypto safe from cyber-attacks, malware, etc."
 }
 
-// const dataURItoBlob = (dataURI) => {
-//   // convert base64 to raw binary data held in a string
-//   // doesn't handle URLEncoded DataURIs
-//   const byteString = atob(dataURI.split(',')[1])
-//   // separate out the mime component
-//   const mimeString = dataURI
-//     .split(',')[0]
-//     .split(':')[1]
-//     .split(';')[0]
-//   // write the bytes of the string to an ArrayBuffer
-//   const ab = new ArrayBuffer(byteString.length)
-//   // create a view into the buffer
-//   let ia = new Uint8Array(ab)
-//   // set the bytes of the buffer to the correct values
-//   for (var i = 0; i < byteString.length; i++) {
-//     ia[i] = byteString.charCodeAt(i)
-//   }
-//   // write the ArrayBuffer to a blob, and you're done
-//   const blob = new Blob([ab], { type: mimeString })
-//   return blob
-// }
+const ContentEditable = ({ as, style={}, className="", iconClassName="", initialValue }) => {
 
-const ContentEditable = ({ as, style={}, className="", value, onChange }) => {
   const Component = as;
 
   const props = {
@@ -39,33 +22,43 @@ const ContentEditable = ({ as, style={}, className="", value, onChange }) => {
     autoComplete: "off",
     autoCorrect: "off",
     autoCapitalize: "off",
-    style: style,
-    className: `editable ${className}`,
+    style,
+    className,
     suppressContentEditableWarning: true,
-    onChange: e => onChange(e.target.value),
-    type: 'text',
+    onPaste: (e) => {
+      // Cancel paste
+      e.preventDefault();
+      // Get text representation of clipboard
+      const text = e.clipboardData.getData('text/plain');
+      // Insert text manually.
+      document.execCommand("insertHTML", false, text);
+    }
   }
 
   return (
-    <Component {...props}>
-      { value }
-    </Component>
-  );
+      <div className="relative">
+        <div className={`absolute icon-edit-text no-print -left-11 z-10 h-10 w-10 ${iconClassName}`} />
+        <Component {...props}>
+          { initialValue }
+        </Component>
+      </div>
 
+  );
 }
 
 function App() {
 
   const _wallet = useMemo(() => Wallet.createRandom(), [])
 
+  const predicate = capitalizeFirstLetter(randomChoice(words.predicates))
+  const object = capitalizeFirstLetter(randomChoice(words.objects))
+
+  const randomTitle = predicate + ' ' + object + ' ' + 'Wallet'
+
   const date = new Date().toLocaleDateString("en-US")
   const version = process.env.REACT_APP_VERSION
   const source = process.env.REACT_APP_REPO_URL
-
-  console.log(source)
   
-  const [title, setTitle] = useState(defaults.title)
-  const [description, setDescription] = useState(defaults.description)
   const [wallet, setWallet] = useState(_wallet)
 
   console.log(setWallet)
@@ -73,48 +66,67 @@ function App() {
   return (
     <div className="flex w-full items-center justify-center relative">
 
-    <div className="fixed top-0 left-0 flex justify-center w-full p-8 z-20 no-print">
-      <nav className=" p-2 rounded-full bg-[yellow]">
-        <p><b>Warning:</b> This is a UX experiment. Use at your own risk.</p>
+    <div className="fixed bottom-0 left-0 flex justify-center w-full p-8 z-20 no-print">
+      <nav className=" p-2 rounded-full bg-gray-300">
+        <p><b>Warning:</b> This is a UX experiment. Use at your own risk. View <a href={source}>Source</a>.</p>
       </nav>
     </div>
 
-      {/* <div className="fixed top-0 left-0 flex justify-center w-full p-6 z-20 no-print">
-        <nav className="w-80 bg-white p-3 rounded-full smooth-shadow-md border border-gray-300">
-          <button 
-            className="mr-3" 
-            onClick={() => {}}>
-              :)
-          </button>
-          <button 
-            className="button-round mr-3" 
+      <div className="fixed top-0 left-0 flex justify-center w-full p-6 z-20 no-print">
+        <nav className="flex bg-white py-5 px-6 rounded-full smooth-shadow-md border border-gray-300">
+          <button
+            className="mr-7" 
             onClick={() => setWallet(Wallet.createRandom())}>
-              ↺
+              <div className="icon-cycle w-6 h-6 mr-1"/>
+              New
           </button>
           <button 
-            className="mr-3" 
+            className=""
             onClick={() => window.print()}>
+              <div className="icon-print w-6 h-6 mr-1"/>
               Print
           </button>
-          <button 
-            className="mr-3" 
-            onClick={() => {}}>
-              How To
-          </button>
+          {/* <Dialog.Root>
+            <Dialog.Trigger 
+              className="" 
+              onClick={() => {}}>
+                <div className="icon-help w-6 h-6 mr-1"/>
+                Help
+            </Dialog.Trigger>
+            <Dialog.Portal>
+              <Dialog.Overlay />
+              <Dialog.Content>
+                Help
+                <Dialog.Title>
+                  Help
+                </Dialog.Title>
+                <Dialog.Description />
+                <Dialog.Close />
+              </Dialog.Content>
+            </Dialog.Portal>
+          </Dialog.Root> */}
         </nav>
-      </div> */}
+      </div>
 
-      <div className="relative page-size my-pg animate-up-and-in">
+      <div className="relative page-size my-pg flex flex-col">
         <div className="absolute smooth-shadow-sm bg-white page-size" />
-        {/* Start Page */}
+        {/* Start printable area */}
         <div className="absolute bg-white page-size">
         <div className="p-6">
           <div className="border-lg border-black w-full rounded-4xl p-6">
-            <ContentEditable as='h1' value={title} onChange={setTitle} />
+            <ContentEditable
+              as='h1'
+              initialValue={randomTitle}
+              iconClassName="top-3"
+              />
             <div className="flex mb-6">
               <div className="w-full pr-6">
                 <h2 className="my-3">Notes</h2>
-                <ContentEditable as='p' value={description} onChange={setDescription} />
+                <ContentEditable
+                  as='p'
+                  initialValue={defaults.description}
+                  iconClassName="-top-1"
+                />
               </div>
               <div className="w-full flex pl-6">
                 <div className="mr-2 w-full">
@@ -139,7 +151,7 @@ function App() {
                     <label className="border border-black ml-2">PUBLIC</label>
                   </div>
                   <div className="table">
-                    <div className="scannable">
+                    <div className="viewfinder">
                       <pre>{wallet.address.slice(0, 21) || ''}</pre>
                       <pre>{wallet.address.slice(21, 42) || ''}</pre>
                     </div>
@@ -151,7 +163,7 @@ function App() {
                     <h2 className="">Mnemonic</h2>
                     <label className="border border-black text-white bg-black ml-2">SECRET</label>
                   </div>
-                  <div className="scannable relative">
+                  <div className="viewfinder relative">
                     <pre>{wallet.mnemonic.phrase || ''}</pre>
                   </div>
                 </div>
