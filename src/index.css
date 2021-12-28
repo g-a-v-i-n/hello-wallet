@@ -1,15 +1,54 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "SF Pro Rounded";
+  src: url("./fonts/SF-Pro-Rounded-Black.otf") format("opentype");
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: "SF Pro Rounded";
+  src: url("./fonts/SF-Pro-Rounded-Heavy.otf") format("opentype");
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: "SF Pro Rounded";
+  src: url("./fonts/SF-Pro-Rounded-Bold.otf") format("opentype");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "SF Pro Rounded";
+  src: url("./fonts/SF-Pro-Rounded-Semibold.otf") format("opentype");
+  font-weight: 600;
+}
+
+/* @font-face {
+  font-family: "SF Pro Rounded";
+  src: url("./fonts/SF-Pro-Rounded-Medium.otf") format("opentype");
+  font-weight: 500;
+} */
+
+@font-face {
+  font-family: "SF Pro Rounded";
+  src: url("./fonts/SF-Pro-Rounded-Regular.otf") format("opentype");
+  font-weight: 400;
+}
+
+
 html, body {
   font-family: 'SF Pro Rounded';
-  background-color:#EEE;
+  background-color: #EEE;
 }
 
 .my-pg {
   margin-top: 8em;
   margin-bottom: 8em;
 }
+
 @media print {
   .my-pg {
     margin-top: 0;
@@ -18,6 +57,10 @@ html, body {
 
   .no-print{
     display:none;
+  }
+
+  html, body {
+    background-color: #FFF;
   }
 }
 
@@ -185,6 +228,7 @@ button.button-round {
 .scannable>:first-child:before {bottom:0;right:0;border-width: 0 1px 1px 0; border-radius: 0 0 8px 0;}
 .scannable>:first-child:after {bottom:0;left:0;border-width: 0 0 1px 1px; border-radius: 0 0 0 8px;}
 
-/* .highlight:before {
+.editable:after {
+  position: absolute;
 
-} */
+}
