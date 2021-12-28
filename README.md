@@ -1,6 +1,8 @@
 # Hello Wallet
 
-No roadmap, no plans or promises
+Have you ever wanted to make a paper wallet but they look like this?
+
+!()[https://github.com/g-a-v-i-n/hello-wallet/docs/etherwallet3.png]
 
 ## Development
 
