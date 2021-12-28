@@ -185,6 +185,6 @@ button.button-round {
 .scannable>:first-child:before {bottom:0;right:0;border-width: 0 1px 1px 0; border-radius: 0 0 8px 0;}
 .scannable>:first-child:after {bottom:0;left:0;border-width: 0 0 1px 1px; border-radius: 0 0 0 8px;}
 
-.highlight:before {
+/* .highlight:before {
 
-}
+} */
