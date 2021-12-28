@@ -26,17 +26,17 @@
   font-weight: 600;
 }
 
-/* @font-face {
+@font-face {
   font-family: "SF Pro Rounded";
   src: url("./fonts/SF-Pro-Rounded-Medium.otf") format("opentype");
   font-weight: 500;
-} */
+}
 
-@font-face {
+/* @font-face {
   font-family: "SF Pro Rounded";
   src: url("./fonts/SF-Pro-Rounded-Regular.otf") format("opentype");
   font-weight: 400;
-}
+} */
 
 @font-face {
   font-family: "SF Mono";
@@ -46,9 +46,15 @@
 
 @font-face {
   font-family: "SF Mono";
+  src: url("./fonts/SF-Mono-Medium.otf") format("opentype");
+  font-weight: 500;
+}
+
+/* @font-face {
+  font-family: "SF Mono";
   src: url("./fonts/SF-Mono-Regular.otf") format("opentype");
   font-weight: 400;
-}
+} */
 
 
 html, body {
@@ -111,6 +117,10 @@ p, .p {
   font-weight: 500; 
   font-size: 13px; 
   line-height: 17px; 
+}
+
+b {
+  font-weight: 600;
 }
 
 pre, .pre {
