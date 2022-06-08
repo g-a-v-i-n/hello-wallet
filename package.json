@@ -1,6 +1,6 @@
 {
   "name": "hello-wallet",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-beta.1",
   "private": true,
   "repository": {
     "type": "git",
@@ -12,12 +12,16 @@
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
+    "buffer": "^6.0.3",
     "ethers": "^5.5.2",
     "file-saver": "^2.0.5",
+    "more-entropy": "^0.0.7",
     "qr-code-styling": "^1.6.0-rc.1",
+    "qrcode": "^1.5.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "5.0.0",
+    "use-draggable": "^1.5.2",
     "web-vitals": "^2.1.2"
   },
   "scripts": {
@@ -45,6 +49,9 @@
     ]
   },
   "devDependencies": {
+    "@types/qrcode": "^1.4.2",
+    "@types/react": "^17.0.44",
+    "@types/react-dom": "^18.0.1",
     "autoprefixer": "^10.4.0",
     "postcss": "^8.4.5",
     "tailwindcss": "^3.0.7"
