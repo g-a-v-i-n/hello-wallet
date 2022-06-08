@@ -1,8 +1,6 @@
 import { useState, useMemo } from 'react'
 // import qrcode from 'qrcode'
 import * as Ethers from 'ethers'
-import { ContentEditable } from './components/ContentEditable'
-import { Symbol } from './components/symbols/Symbol'
 import { PaperWallet } from './components/PaperWallet'
 import { capitalizeFirstLetter } from './lib/strings'
 import { randomChoice } from './lib/random'
@@ -17,8 +15,6 @@ const defaults = {
 function generateWallet() {
   return Ethers.Wallet.createRandom()
 }
-
-
 
 const emojis = "😀 😊 😆 😂 🤣 😜 😬 😍 😘 🥰 😎 🤩 👍 ✌ 🤟 👊 ♥ 💕 ★ ✨ ⚽ 🏀 🏈 ⚾ 👾 🦄 👻 🤖 🐻 🐱 👽 💀 🐯 🐉 🐵 🐶 💩 🐴 🐏 🐇 🐍 🐔 🐖 🐭 🐮".split(' ')
 
@@ -58,11 +54,11 @@ function App() {
             }
           }
         >
-          <Symbol name="doc.fill.badge.plus" className="h-6 mb-2" />
+          <div className="text-2xl mb-1">􀣘</div>
           New
         </button>
         <button className="text-black flex items-center justify-center flex-col w-16 h-16 leading-none" onClick={() => window.print()}>
-          <Symbol name="printer.fill" className="h-6 mb-2" />
+        <div className="text-2xl mb-1">􀎛</div>
           Print
         </button>
         {/* <button className="text-black flex items-center justify-center flex-col w-16 h-16 leading-none" onClick={() => {}}>
@@ -88,14 +84,14 @@ function App() {
         />
       </div>
 
-      <div className="page-width justify-between  flex mt-16 mb-6 no-print">
-          <h3></h3>
+      <div className="page-width justify-between flex mt-16 mb-6 no-print">
+          <div />
           <div className="flex gap-x-2 items-center">
 
 
             <a className="flex gap-x-1 items-center no-underline font-bold" href={source} target="_blank" rel="noreferrer">
               Source
-            <Symbol name="arrow.up.right.square.fill" className="h-4" />
+              <div className="text-md">􀄕</div>
 </a>
           </div>
       </div>

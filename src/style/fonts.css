@@ -73,15 +73,64 @@
 }
 
 @font-face {
-  font-family: 'SF Mono';
-  font-weight: 700;
-  src: local('SF Mono'), url('./fonts/SF-Mono-Bold.otf') format('opentype');
+  font-family: 'SF Pro Text';
+  font-weight: 100;
+  src: local('SF Pro Text'), url('./fonts/SF-Pro-Text-Ultralight.otf') format('opentype');
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'SF Mono';
+  font-family: 'SF Pro Text';
+  font-weight: 200;
+  src: local('SF Pro Text'), url('./fonts/SF-Pro-Text-Thin.otf') format('opentype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Pro Text';
+  font-weight: 300;
+  src: local('SF Pro Text'), url('./fonts/SF-Pro-Text-Light.otf') format('opentype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Pro Text';
+  font-weight: 400;
+  src: local('SF Pro Text'), url('./fonts/SF-Pro-Text-Regular.otf') format('opentype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Pro Text';
   font-weight: 500;
-  src: local('SF Mono'), url('./fonts/SF-Mono-Medium.otf') format('opentype');
+  src: local('SF Pro Text'), url('./fonts/SF-Pro-Text-Medium.otf') format('opentype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Pro Text';
+  font-weight: 600;
+  src: local('SF Pro Text'), url('./fonts/SF-Pro-Text-Semibold.otf') format('opentype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Pro Text';
+  font-weight: 700;
+  src: local('SF Pro Text'), url('./fonts/SF-Pro-Text-Bold.otf') format('opentype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Pro Text';
+  font-weight: 800;
+  src: local('SF Pro Text'), url('./fonts/SF-Pro-Text-Heavy.otf') format('opentype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Pro Text';
+  font-weight: 900;
+  src: local('SF Pro Text'), url('./fonts/SF-Pro-Text-Black.otf') format('opentype');
   font-display: swap;
 }

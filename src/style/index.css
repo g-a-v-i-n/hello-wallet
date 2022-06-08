@@ -40,7 +40,7 @@
 
 html,
 body {
-  font-family: 'SFRounded', ui-rounded, system-ui, sans-serif;
+  font-family: 'SFRounded', ui-rounded, 'SF Pro Text', system-ui, sans-serif;
   @apply bg-gray-100;
 }
 

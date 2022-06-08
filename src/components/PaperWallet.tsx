@@ -1,4 +1,3 @@
-import { Symbol } from './symbols/Symbol'
 import { ContentEditable } from './ContentEditable'
 import { chunk } from '../lib/strings'
 
@@ -12,6 +11,8 @@ export type PaperWalletProps = {
   date: string
   version?: string
 }
+
+const sf_numbers = '􀃋 􀃍 􀃏 􀃑 􀃓 􀃕 􀃗 􀃙 􀃛 􀕒 􀕓 􀕔 􀕕 􀕖 􀕗 􀕘 􀕙 􀕚 􀕛 􀕜 􀕝 􀕞 􀕟 􀕠 􀕡'.split(' ')
 
 export function PaperWallet(props: PaperWalletProps) {
   return (
@@ -39,7 +40,7 @@ export function PaperWallet(props: PaperWalletProps) {
 
         <div className="flex flex-col items-center justify-center mt-16 gap-y-3">
           <span className="flex gap-1 items-center">
-            <Symbol name="paperplane.fill" className="h-5 mr-1" />
+            <div className="text-lg mr-1">􀈠</div>
             <h3 className="text-xl font-extrabold leading-none">Address</h3>
           </span>
 
@@ -63,7 +64,7 @@ export function PaperWallet(props: PaperWalletProps) {
 
         <div className="flex flex-col items-center justify-center mt-16 gap-y-3">
           <span className="flex gap-1 items-center">
-            <Symbol name="key.fill" className="h-5 mr-1" />
+          <div className="text-lg mr-1">􀟖</div>
             <h3 className="text-xl font-extrabold leading-none">Mnemonic</h3>
           </span>
           <p className="text-center">
@@ -74,12 +75,7 @@ export function PaperWallet(props: PaperWalletProps) {
               {props.mnemonic.split(' ').map((word, i) => {
                 return (
                   <span className="flex items-center gap-0.5">
-                    <Symbol
-                      // @ts-ignore
-                      name={`${i + 1}.square.fill`}
-                      weight="bold"
-                      className="h-4"
-                    />
+                    <div className="text-lg font-bold">{sf_numbers[i]}</div>
                     <p className="font-semibold" key={`mnemonic-word-${i}`}>
                       {word}
                     </p>

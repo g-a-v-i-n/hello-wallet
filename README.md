@@ -2,35 +2,34 @@
 
 [Try it.](https://hello-wallet.vercel.app/)
 
-Have you ever wanted to make a paper wallet but they all look like this?
+Why do paper wallets look like this:
+![my ether wallet paper wallet](https://github.com/g-a-v-i-n/hello-wallet/blob/master/docs/myetherwallet.png?raw=true)
 
-![](https://github.com/g-a-v-i-n/hello-wallet/blob/master/docs/etherwallet3.png?raw=true)
+When they could look like this?
+![hello wallet paper wallet](https://github.com/g-a-v-i-n/hello-wallet/blob/master/docs/hellowallet.png?raw=true)
 
-Using the latest graphic design technology it is possible to make a nicer paper wallet.
+Using the latest graphic design technology it is possible to make a better paper wallet.
 
 ## Development
 
 This is a `create-react-app` and Tailwind CSS codebase. Start with the following:
 
 ```bash
-npm install
-npm run start
+pnpm install
+pnpm run start
 ```
 
 ### To Do
 
-- [ ] Random wallet emoji / icon
-- [ ] User input for existing wallet mnemonic and address
-- [ ] QR code toggle
-- [ ] Private key instead of mnemonic
-- [ ] Security pattern + foldline
 - [ ] Mobile
-- [ ] Printing guide, how to modal or help page
+- [ ] Printing modal with reminder to check `more settings` -> `background graphics` and set margins to `none`.
+- [ ] Paper Wallet info, pros + cons
 - [ ] Date format selection
 - [ ] Write-in mnemonic option
+- [ ] Add Eth Icon
 
 ### Future Ideas
-- [ ] Rearrangable / configurable sections
 - [ ] BTC, tezos or others
-- [ ] Multisig
+- [ ] Multisig, shards
 - [ ] Wallet with password
+- [ ] HD Wallet backup key + child key derivation UI

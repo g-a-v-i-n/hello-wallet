@@ -1,28 +1,15 @@
 {
   "name": "hello-wallet",
-  "version": "1.0.0-beta.1",
+  "version": "0.1.0",
   "private": true,
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/g-a-v-i-n/hello-wallet"
-  },
   "dependencies": {
-    "@radix-ui/react-dialog": "^0.1.5",
-    "@radix-ui/react-tooltip": "^0.1.6",
-    "@testing-library/jest-dom": "^5.16.1",
-    "@testing-library/react": "^12.1.2",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
-    "buffer": "^6.0.3",
-    "ethers": "^5.5.2",
-    "file-saver": "^2.0.5",
-    "more-entropy": "^0.0.7",
-    "qr-code-styling": "^1.6.0-rc.1",
-    "qrcode": "^1.5.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-scripts": "5.0.0",
-    "use-draggable": "^1.5.2",
-    "web-vitals": "^2.1.2"
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -47,13 +34,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@types/qrcode": "^1.4.2",
-    "@types/react": "^17.0.44",
-    "@types/react-dom": "^18.0.1",
-    "autoprefixer": "^10.4.0",
-    "postcss": "^8.4.5",
-    "tailwindcss": "^3.0.7"
   }
 }
