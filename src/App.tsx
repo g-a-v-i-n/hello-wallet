@@ -16,6 +16,8 @@ function generateWallet() {
   return Ethers.Wallet.createRandom()
 }
 
+const donationAddr = '0x9f948E0aEAD7C0ac1496Cd316059F0b546917312'
+
 const emojis = "😀 😊 😆 😂 🤣 😜 😬 😍 😘 🥰 😎 🤩 👍 ✌ 🤟 👊 ♥ 💕 ★ ✨ ⚽ 🏀 🏈 ⚾ 👾 🦄 👻 🤖 🐻 🐱 👽 💀 🐯 🐉 🐵 🐶 💩 🐴 🐏 🐇 🐍 🐔 🐖 🐭 🐮".split(' ')
 
 function randomEmoji() {
@@ -84,8 +86,15 @@ function App() {
         />
       </div>
 
-      <div className="page-width justify-between flex mt-16 mb-6 no-print">
-          <div />
+      <div className="page-width justify-between flex mt-16 mb-12 no-print">
+          <div className="flex items-center justify-center">Find this useful? Consider donating:
+            <button
+              onClick={() => {
+                navigator.clipboard.writeText(donationAddr);
+              }}
+              className="rounded-full border-1 border-gray-200 px-2 py-1 text-sm font-bold">0x9f94...7312 􀉂</button>
+            <div></div>
+          </div>
           <div className="flex gap-x-2 items-center">
 
 

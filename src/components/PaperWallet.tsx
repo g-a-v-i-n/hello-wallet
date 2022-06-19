@@ -52,7 +52,7 @@ export function PaperWallet(props: PaperWalletProps) {
               onClick={() => {
                 navigator.clipboard.writeText(props.address);
               }}
-              className="shadow-elevation-low text-sm no-print absolute -bottom-5 -right-2 px-2 py-1 bg-gray-100 text-black rounded-full">
+              className="shadow-elevation-low text-sm no-print absolute -bottom-5 -right-2 px-2 py-1 bg-white text-black rounded-full">
               Copy
               <div className="text-sm ml-1">􀉂</div>
             </button>
@@ -73,7 +73,7 @@ export function PaperWallet(props: PaperWalletProps) {
         <div className="flex flex-col items-center justify-center mt-16 gap-y-3">
           <span className="flex gap-1 items-center">
           <div className="text-lg mr-1">􀟖</div>
-            <h3 className="text-xl font-extrabold leading-none">Mnemonic</h3>
+            <h3 className="text-xl font-extrabold leading-none">Seed Phrase</h3>
           </span>
           <p className="text-center">
             Never share this secret key with anyone.
