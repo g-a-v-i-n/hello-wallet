@@ -10,6 +10,7 @@ export const ContentEditable = (props: ContentEditableProps) => {
 
   const internalProps = {
     contentEditable: true,
+    role:"textbox",
     autoComplete: 'off',
     autoCorrect: 'off',
     autoCapitalize: 'off',
@@ -24,6 +25,7 @@ export const ContentEditable = (props: ContentEditableProps) => {
       // Insert text manually.
       document.execCommand('insertHTML', false, text)
     },
+
   }
 
   return (

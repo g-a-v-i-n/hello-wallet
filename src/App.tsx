@@ -9,7 +9,7 @@ import words from './lib/words.json'
 const defaults = {
   title: '✏️ Give Me a Title',
   description:
-    "✏️ Hello Wallet is an editable paper wallet generator. It's an inexpensive and flexible way to generate a secure cold wallet for your ETH, provided you store the printed page in a safe, dry place. Most of the time, there are better options to store your ETH.",
+    "✏️ Hello Wallet is an editable paper wallet generator. It's an inexpensive and flexible way to generate a secure cold wallet for tokens or NFTs on Ethereum, provided you store the printed page in a safe, dry place. Most of the time, there are better options to store your tokens or NFTs, so make sure you know what you're doing.",
 }
 
 function generateWallet() {
@@ -78,7 +78,7 @@ function App() {
           address={wallet.address}
           mnemonic={wallet.mnemonic.phrase}
           emoji={emoji}
-          setEmoji={() => setEmoji(emojis[Math.floor(Math.random() * emojis.length)])}
+          setEmoji={() => setEmoji(randomEmoji())}
           title={title}
           description={defaults.description}
           date={date}

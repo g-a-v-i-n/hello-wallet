@@ -17,7 +17,7 @@ const sf_numbers = '􀃋 􀃍 􀃏 􀃑 􀃓 􀃕 􀃗 􀃙 􀃛 􀕒 􀕓 􀕔 
 export function PaperWallet(props: PaperWalletProps) {
   return (
     <div className="absolute bg-white page-size flex justify-center">
-      <div className="w-full flex flex-col items-center mt-32">
+      <div className="w-full flex flex-col items-center mt-16 gap-y-12">
         <div className="flex flex-col items-center justify-center gap-y-1">
           <h1
             onClick={() => props.setEmoji()}
@@ -28,19 +28,19 @@ export function PaperWallet(props: PaperWalletProps) {
           </h1>
           <ContentEditable
             as="h2"
-            className="table min-h-16 min-w-8 text-4xl font-extrabold max-w-lg pt-3 text-center"
+            className="min-h-16 min-w-8 text-4xl font-extrabold max-w-lg pt-3 text-center"
             initialValue={props.title}
           />
           <ContentEditable
             as="p"
-            className="table min-h-16 min-w-8 max-w-lg pt-3 text-center"
+            className="min-h-16 min-w-8 max-w-lg pt-3 text-center"
             initialValue={props.description}
           />
         </div>
 
-        <div className="flex flex-col items-center justify-center mt-16 gap-y-3">
+        <div className="flex flex-col items-center justify-center gap-y-2">
           <span className="flex gap-1 items-center">
-            <div className="text-lg mr-1">􀈠</div>
+            <div className="text-lg mr-1 leading-none">􀈠</div>
             <h3 className="text-xl font-extrabold leading-none">Address</h3>
           </span>
 
@@ -54,7 +54,7 @@ export function PaperWallet(props: PaperWalletProps) {
               }}
               className="shadow-elevation-low text-sm no-print absolute -bottom-5 -right-2 px-2 py-1 bg-white text-black rounded-full">
               Copy
-              <div className="text-sm ml-1">􀉂</div>
+              <div className="text-sm ml-1 ">􀉂</div>
             </button>
             <div className="flex gap-2">
               <p className="font-semibold">0x</p>
@@ -70,9 +70,9 @@ export function PaperWallet(props: PaperWalletProps) {
           </div>
         </div>
 
-        <div className="flex flex-col items-center justify-center mt-16 gap-y-3">
+        <div className="flex flex-col items-center justify-center gap-y-2">
           <span className="flex gap-1 items-center">
-          <div className="text-lg mr-1">􀟖</div>
+          <div className="text-lg mr-1 leading-none">􀟖</div>
             <h3 className="text-xl font-extrabold leading-none">Seed Phrase</h3>
           </span>
           <p className="text-center">
@@ -91,6 +91,24 @@ export function PaperWallet(props: PaperWalletProps) {
                 )
               })}
             </div>
+          </div>
+        </div>
+
+        <div className="flex flex-col items-center justify-center gap-y-2 w-full">
+          <span className="flex gap-1 items-center">
+            <div className="text-lg mr-1 leading-none">􀉛</div>
+            <h3 className="text-xl font-extrabold leading-none">Notes</h3>
+          </span>
+          <p className="text-center">
+            A place for notes after this wallet is printed.
+          </p>
+          <div className="p-2 max-w-2xl w-full flex flex-col gap-y-8 py-8">
+            <div className="w-full h-[1px] bg-black"/>
+            <div className="w-full h-[1px] bg-black"/>
+            <div className="w-full h-[1px] bg-black"/>
+            <div className="w-full h-[1px] bg-black"/>
+            <div className="w-full h-[1px] bg-black"/>
+            <div className="w-full h-[1px] bg-black"/>
           </div>
         </div>
 
