@@ -23,7 +23,6 @@ pnpm run start
 - [ ] Add Eth Icon
 
 ### Future Ideas
-- [ ] BTC, tezos or others
 - [ ] Multisig, shards
 - [ ] Wallet with password
 - [ ] HD Wallet backup key + child key derivation UI
