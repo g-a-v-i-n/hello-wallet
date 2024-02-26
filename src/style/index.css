@@ -1,27 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import './fonts.css';
 
 :root {
-  --shadow-color: 220deg 5% 56%;
-  --shadow-elevation-low: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.34),
-    0.4px 0.8px 1px -1.2px hsl(var(--shadow-color) / 0.34),
-    1px 2px 2.5px -2.5px hsl(var(--shadow-color) / 0.34),
-    2.1px 4.1px 5.2px -1.7px hsl(var(--shadow-color) / 0.36);
-
-  --shadow-elevation-medium: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.36),
-    0.8px 1.6px 2px -0.8px hsl(var(--shadow-color) / 0.36),
-    2.1px 4.1px 5.2px -1.7px hsl(var(--shadow-color) / 0.36),
-    5px 10px 12.6px -2.5px hsl(var(--shadow-color) / 0.36);
-  --shadow-elevation-high: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.34),
-    1.5px 2.9px 3.7px -0.4px hsl(var(--shadow-color) / 0.34),
-    2.7px 5.4px 6.8px -0.7px hsl(var(--shadow-color) / 0.34),
-    4.5px 8.9px 11.2px -1.1px hsl(var(--shadow-color) / 0.34),
-    7.1px 14.3px 18px -1.4px hsl(var(--shadow-color) / 0.34),
-    11.2px 22.3px 28.1px -1.8px hsl(var(--shadow-color) / 0.34),
-    17px 33.9px 42.7px -2.1px hsl(var(--shadow-color) / 0.34),
-    25px 50px 62.9px -2.5px hsl(var(--shadow-color) / 0.34);
+  --shadow-color: 0deg 0% 74%;
+  --shadow-elevation-low:
+    0.5px 0.5px 0.7px hsl(var(--shadow-color) / 0.34),
+    0.7px 0.7px 0.9px -1.9px hsl(var(--shadow-color) / 0.26),
+    1.7px 1.6px 2.2px -3.7px hsl(var(--shadow-color) / 0.19);
+  --shadow-elevation-medium:
+    0.5px 0.5px 0.7px hsl(var(--shadow-color) / 0.28),
+    0.9px 0.9px 1.2px -0.9px hsl(var(--shadow-color) / 0.24),
+    1.9px 1.8px 2.5px -1.9px hsl(var(--shadow-color) / 0.21),
+    4.1px 4px 5.4px -2.8px hsl(var(--shadow-color) / 0.17),
+    8.4px 8.2px 11px -3.7px hsl(var(--shadow-color) / 0.13);
+  --shadow-elevation-high:
+    0.5px 0.5px 0.7px hsl(var(--shadow-color) / 0.29),
+    1.2px 1.2px 1.6px -0.5px hsl(var(--shadow-color) / 0.27),
+    2.2px 2.1px 2.9px -0.9px hsl(var(--shadow-color) / 0.25),
+    3.7px 3.6px 4.8px -1.4px hsl(var(--shadow-color) / 0.23),
+    6.2px 6px 8.1px -1.9px hsl(var(--shadow-color) / 0.2),
+    10px 9.8px 13.1px -2.3px hsl(var(--shadow-color) / 0.18),
+    15.6px 15.2px 20.4px -2.8px hsl(var(--shadow-color) / 0.16),
+    23.3px 22.7px 30.5px -3.3px hsl(var(--shadow-color) / 0.14),
+    33.5px 32.7px 43.9px -3.7px hsl(var(--shadow-color) / 0.12);
 }
 
 @media print {
@@ -32,6 +34,9 @@
 
   .no-print {
     display: none !important;
+    height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
   }
 
   html,
@@ -42,8 +47,8 @@
 
 html,
 body {
-  font-family: 'SFRounded', ui-rounded, 'SF Pro Text', system-ui, sans-serif;
-  @apply bg-gray-100;
+  font-family: 'Inter', 'SF Pro Text', system-ui, sans-serif;
+  @apply bg-[#FAFAFA];
 }
 
 a {
@@ -56,8 +61,9 @@ a {
 }
 
 .page-size {
-  height: 11in;
-  width: 8.5in;
+  /*  */
+  height: 11in; 
+  width: 8.6in;
 }
 
 .page-width {
@@ -68,68 +74,17 @@ a {
   transform-origin: top center;
 }
 
-.rounded-4xl {
-  border-radius: 2.25em;
-}
-/* 
-h1, .h1 {
-  font-weight: 900;
-  font-size: 32px;
-  line-height: 48px;
-  letter-spacing: 0.025em;
-}
+.button-shadow {
+  
 
-h2, .h2 {
-  font-weight: 800;
-  font-size: 16px; 
-  line-height: 32px; 
-  letter-spacing: 0.025em;
-}
-
-h3, .h3 {
-  font-weight: 800;
-  font-size: 12px; 
-  line-height: 16px;
-  letter-spacing: 0.025em;
-}
-
-p, .p {
-  font-weight: 500;
-  font-size: 13px; 
-  line-height: 17px;
-  letter-spacing: 0.025em;
-}
-
-b {
-  font-weight: 700;
-}
-
-pre, .pre {
-  font-weight: 500;
-  font-size: 18px; 
-  line-height: 24px;
-  font-family: 'SF Mono', monospace;
-  white-space: pre-wrap;
-}
-
-label, .label {
-  display: block;
-  font-weight: 800;
-  font-size: 10px; 
-  line-height: 20px;
-  letter-spacing: 0.025em;
-  @apply px-1.5 rounded-full;
-} */
-
-.text-icon {
-  font-family: 'SF Pro', system-ui, sans-serif;
 }
 
 button,
 .button {
   content: '';
-  font-weight: 600;
-  @apply flex items-center hover:scale-110 active:scale-100 transition-transform;
+  font-weight: 500;
+  outline: 1px solid rgba(0,0,0,0.04);
+  @apply flex shadow-elevation-medium items-center hover:scale-105 active:scale-100 transition-transform rounded-full;
 }
 
 .shadow-elevation-low {
@@ -143,57 +98,14 @@ button,
 .shadow-elevation-high {
   box-shadow: var(--shadow-elevation-high);
 }
-/* 
-.icon-edit-text {
-  background-image: url('../static/icon-edit-text.svg');
-  @apply bg-center bg-no-repeat bg-contain;
-}
 
-.icon-logo {
-  background-image: url('../static/icon-logo.svg');
-  @apply bg-center bg-no-repeat bg-contain;
-}
-
-.icon-cycle {
-  background-image: url('../static/icon-cycle.svg');
-  @apply bg-center bg-no-repeat bg-contain;
-}
-
-.icon-new {
-  background-image: url('../static/icon-new.svg');
-  @apply bg-center bg-no-repeat bg-contain;
-}
-
-.icon-print {
-  background-image: url('../static/icon-print.svg');
-  @apply bg-center bg-no-repeat bg-contain;
-}
-
-.icon-help {
-  background-image: url('../static/icon-help.svg');
-  @apply bg-center bg-no-repeat bg-contain;
-} */
-/* 
-.hover-target-icon-edit-text .icon-edit-text {
-  transition: 100ms transform;
-}
-
-.hover-target-icon-edit-text:hover .icon-edit-text {
-  transform: translateX(4px);
-} */
 
 *[contenteditable='true'] {
   @apply relative border-transparent transition-colors -m-2 p-2 outline-none rounded-xl;
 }
 
-/* *[contenteditable="true"]:hover {
-  @apply border-transparent bg-[yellow];
-} */
-
 *[contenteditable='true']:focus {
-  /* offset-x | offset-y | blur-radius | spread-radius | color */
-  /* box-shadow: 0 0 0 8px yellow; */
-  @apply border-transparent bg-gray-100;
+  @apply border-transparent bg-[#EEF7FF];
 }
 
 *[contenteditable='true']::selection {
@@ -213,6 +125,11 @@ p[contenteditable='true']::after {
   top: -1px;
 }
 
+p::selection, a::selection, h3::selection {
+    color: #008cff !important;
+    background-color: #CFE5FF !important;
+}
+/* 
 .vr {
   content: '';
   border-color: black;
@@ -303,4 +220,4 @@ p[contenteditable='true']::after {
 
 .intro-transform {
   transform: translateY(0);
-}
+} */
