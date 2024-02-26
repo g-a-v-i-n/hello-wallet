@@ -31,7 +31,7 @@ function App() {
 
       <div className="relative page-size">
         {/* Shadow */}
-        <div className="absolute shadow-elevation-high bg-white page-size no-print" />
+        <div className="absolute shadow-elevation-high bg-white page-size no-print opacity-50" />
         {/* Start printable area */}
         <PaperWallet
           address={wallet.address || ""}
