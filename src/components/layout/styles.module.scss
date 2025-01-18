@@ -1,0 +1,89 @@
+.container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.spacer {
+  height: 8rem; /* h-32 */
+  @media print {
+    display: none;
+  }
+}
+
+.pageContainer {
+  position: relative;
+  /* Assuming page-size is a custom class that needs to be maintained */
+  height: 11in;
+  width: 8.6in;
+}
+
+.pageShadow {
+  position: absolute;
+  box-shadow: var(--shadow-elevation-high);
+  background-color: white;
+  height: 11in;
+  width: 8.6in;
+  opacity: 0.5;
+  @media print {
+    display: none;
+  }
+}
+
+.regenerateButton {
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translateX(2rem) translateY(-2rem);
+  background-color: #fff;
+  padding: 0.75rem 1rem;
+  color: #373737;
+  gap: 0.5rem;
+  @media print {
+    display: none;
+  }
+}
+
+.aboutSection {
+  width: var(--page-width);
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4rem;
+  margin-bottom: 3rem;
+  @media print {
+    display: none;
+  }
+}
+
+.aboutContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.aboutTitle {
+  font-size: 1.25rem;
+  letter-spacing: -0.33px;
+  font-weight: 500;
+  color: #373737;
+}
+
+.aboutText {
+  max-width: 32rem;
+  font-size: 1rem;
+  letter-spacing: -0.18px;
+  color: rgba(55, 55, 55, 0.6);
+}
+
+.sourceLink {
+  font-size: 1rem;
+  letter-spacing: -0.18px;
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+  text-decoration: underline;
+  color: rgba(55, 55, 55, 0.6);
+}

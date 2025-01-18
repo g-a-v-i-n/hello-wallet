@@ -1,0 +1,36 @@
+.container {
+  outline: none;
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: break-word;
+
+  // Placeholder styles
+  &:empty::before {
+    content: attr(data-placeholder);
+    color: #9ca3af; // text-gray-400 equivalent
+    pointer-events: none;
+  }
+
+  *[contenteditable='true'] {
+    position: relative;
+    margin: -8px;
+    padding: 8px;
+    border-radius: 12px;
+    outline: none;
+
+    transition: background-color 0.1s ease-in-out;
+  }
+
+  *[contenteditable='true']:focus {
+    background-color: #fffad7;
+    background-color: color(display-p3 1 0.9811 0.8582);
+  }
+
+  *[contenteditable='true']::selection {
+    color: #352300;
+    color: color(display-p3 0.1966 0.1409 0);
+
+    background-color: #ffea4d;
+    background-color: color(display-p3 1 0.9221 0.416);
+  }
+}

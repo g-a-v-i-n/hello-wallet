@@ -1,5 +1,5 @@
 import React from 'react'
-
+import styles from './styles.module.scss'
 type ContentEditableProps = {
   as: 'div' | 'span' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p'
   className?: string
@@ -12,7 +12,7 @@ export const ContentEditable = (props: ContentEditableProps) => {
 
   const internalProps = {
     contentEditable: true,
-    role:"textbox",
+    role: 'textbox',
     autoComplete: 'off',
     autoCorrect: 'off',
     autoCapitalize: 'off',
@@ -27,11 +27,13 @@ export const ContentEditable = (props: ContentEditableProps) => {
       // Insert text manually.
       document.execCommand('insertHTML', false, text)
     },
-
   }
 
   return (
-    <div className={props.className}>
+    <div
+      className={`${styles.container} ${props.className}`}
+      data-as={props.as}
+    >
       <Component {...internalProps}>{props.initialValue}</Component>
     </div>
   )

@@ -1,6 +1,6 @@
 {
   "name": "hello-wallet",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
@@ -10,6 +10,9 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
+    "sass": "^1.83.4",
+    "spoiled": "^0.3.3",
+    "viem": "^2.22.9",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -29,6 +32,7 @@
     ]
   },
   "devDependencies": {
+    "@types/react": "^19.0.7",
     "typescript": "^5.3.3",
     "vite": "^5.1.4"
   }

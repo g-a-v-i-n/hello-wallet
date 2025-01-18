@@ -4,18 +4,15 @@
 
 :root {
   --shadow-color: 0deg 0% 74%;
-  --shadow-elevation-low:
-    0.5px 0.5px 0.7px hsl(var(--shadow-color) / 0.34),
+  --shadow-elevation-low: 0.5px 0.5px 0.7px hsl(var(--shadow-color) / 0.34),
     0.7px 0.7px 0.9px -1.9px hsl(var(--shadow-color) / 0.26),
     1.7px 1.6px 2.2px -3.7px hsl(var(--shadow-color) / 0.19);
-  --shadow-elevation-medium:
-    0.5px 0.5px 0.7px hsl(var(--shadow-color) / 0.28),
+  --shadow-elevation-medium: 0.5px 0.5px 0.7px hsl(var(--shadow-color) / 0.28),
     0.9px 0.9px 1.2px -0.9px hsl(var(--shadow-color) / 0.24),
     1.9px 1.8px 2.5px -1.9px hsl(var(--shadow-color) / 0.21),
     4.1px 4px 5.4px -2.8px hsl(var(--shadow-color) / 0.17),
     8.4px 8.2px 11px -3.7px hsl(var(--shadow-color) / 0.13);
-  --shadow-elevation-high:
-    0.5px 0.5px 0.7px hsl(var(--shadow-color) / 0.29),
+  --shadow-elevation-high: 0.5px 0.5px 0.7px hsl(var(--shadow-color) / 0.29),
     1.2px 1.2px 1.6px -0.5px hsl(var(--shadow-color) / 0.27),
     2.2px 2.1px 2.9px -0.9px hsl(var(--shadow-color) / 0.25),
     3.7px 3.6px 4.8px -1.4px hsl(var(--shadow-color) / 0.23),
@@ -48,176 +45,23 @@
 html,
 body {
   font-family: 'Inter', 'SF Pro Text', system-ui, sans-serif;
-  @apply bg-[#FAFAFA];
+  background-color: #fafafa;
+  padding: 0;
+  margin: 0;
+
+  letter-spacing: -0.18px;
+  text-align: left;
+  text-decoration: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smooth: none;
+  font-optical-sizing: auto;
+  text-size-adjust: none;
+  backface-visibility: hidden;
+  font-display: auto;
 }
 
 a {
   text-decoration: underline;
 }
-
-.page-margin {
-  margin-top: 8em;
-  margin-bottom: 8em;
-}
-
-.page-size {
-  /*  */
-  height: 11in; 
-  width: 8.6in;
-}
-
-.page-width {
-  width: 8.5in;
-}
-
-.origin-top-center {
-  transform-origin: top center;
-}
-
-.button-shadow {
-  
-
-}
-
-button,
-.button {
-  content: '';
-  font-weight: 500;
-  outline: 1px solid rgba(0,0,0,0.04);
-  @apply flex shadow-elevation-medium items-center hover:scale-105 active:scale-100 transition-transform rounded-full;
-}
-
-.shadow-elevation-low {
-  box-shadow: var(--shadow-elevation-low);
-}
-
-.shadow-elevation-medium {
-  box-shadow: var(--shadow-elevation-medium);
-}
-
-.shadow-elevation-high {
-  box-shadow: var(--shadow-elevation-high);
-}
-
-
-*[contenteditable='true'] {
-  @apply relative border-transparent transition-colors -m-2 p-2 outline-none rounded-xl;
-}
-
-*[contenteditable='true']:focus {
-  @apply border-transparent bg-[#EEF7FF];
-}
-
-*[contenteditable='true']::selection {
-  @apply bg-gray-300;
-}
-
-*[contenteditable='true']::after {
-  @apply absolute -left-8;
-}
-
-
-h1[contenteditable='true']::after {
-  top: 14px;
-}
-
-p[contenteditable='true']::after {
-  top: -1px;
-}
-
-p::selection, a::selection, h3::selection {
-    color: #008cff !important;
-    background-color: #CFE5FF !important;
-}
-/* 
-.vr {
-  content: '';
-  border-color: black;
-  border-style: solid;
-  border-width: 1px;
-  border-left: none;
-  border-top: none;
-  border-bottom: none;
-  overflow-y: auto;
-  display: flex;
-  align-items: stretch;
-  flex: 1;
-}
-
-.viewfinder {
-  padding: 0.75em;
-  position: relative;
-}
-
-.viewfinder:before,
-.viewfinder:after,
-.viewfinder > :first-child:before,
-.viewfinder > :first-child:after {
-  position: absolute;
-  content: ' ';
-  width: 16px;
-  height: 16px;
-  border-color: black;
-  border-style: solid;
-}
-
-.viewfinder:before {
-  top: 0;
-  left: 0;
-  border-width: 1px 0 0 1px;
-  border-radius: 10px 0 0 0;
-}
-.viewfinder:after {
-  top: 0;
-  right: 0;
-  border-width: 1px 1px 0 0;
-  border-radius: 0 10px 0 0;
-}
-.viewfinder > :first-child:before {
-  bottom: 0;
-  right: 0;
-  border-width: 0 1px 1px 0;
-  border-radius: 0 0 10px 0;
-}
-.viewfinder > :first-child:after {
-  bottom: 0;
-  left: 0;
-  border-width: 0 0 1px 1px;
-  border-radius: 0 0 0 10px;
-}
-
-@supports (mask-image: paint(smooth-corners)) {
-  .superellipse-sm {
-    border-radius: 0;
-    stroke-width: 0;
-    stroke: none;
-    --border-radius: 8;
-    --stroke-width: 1;
-    --stroke-color: black;
-    background-image: paint(smooth-corners);
-  }
-
-  .superellipse {
-    border-radius: 0;
-    stroke-width: 0;
-    stroke: none;
-    --border-radius: 14;
-    --stroke-width: 1;
-    --stroke-color: black;
-    background-image: paint(smooth-corners);
-  }
-
-  .superellipse-lg {
-    border-radius: 0;
-    stroke-width: 0;
-    stroke: none;
-    --border-radius: 20;
-    --stroke-width: 1;
-    --stroke-color: black;
-    background-image: paint(smooth-corners);
-  }
-}
-
-.intro-transform {
-  transform: translateY(0);
-} */

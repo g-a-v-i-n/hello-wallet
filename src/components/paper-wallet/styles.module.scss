@@ -1,0 +1,206 @@
+.container {
+  position: absolute;
+  background-color: white;
+  height: 11in;
+  width: 8.6in;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2.5rem;
+  gap: 2.5rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.title {
+  min-height: 4rem;
+  min-width: 2rem;
+  font-size: 2.25rem;
+  font-weight: 600;
+  max-width: 36rem;
+  padding-top: 0.75rem;
+  text-align: center;
+  letter-spacing: -0.79px;
+}
+
+.description {
+  min-height: 4rem;
+  min-width: 2rem;
+  max-width: 36rem;
+  padding-top: 0.75rem;
+  text-align: center;
+  font-size: 1rem;
+  letter-spacing: -0.18px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.sectionTitle {
+  font-size: 1.25rem;
+  letter-spacing: -0.33px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.sectionDescription {
+  text-align: center;
+  padding-bottom: 0.5rem;
+  font-size: 1rem;
+  letter-spacing: -0.18px;
+}
+
+.addressContainer {
+  border-radius: 1rem;
+  border: 1px solid;
+  padding: 1rem 1.5rem;
+  position: relative;
+}
+
+.copyButton {
+  @media print {
+    display: none;
+  }
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  font-size: 1rem;
+  letter-spacing: -0.18px;
+  padding: 0.5rem 0.75rem;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  color: white;
+  transform: translate(1.5rem, 1.5rem);
+}
+
+.copyText {
+  font-size: 0.875rem;
+  color: #fff;
+}
+
+.addressText {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 1rem;
+}
+
+.monoText {
+  font-family: monospace;
+}
+
+.seedPhraseContainer {
+  border-radius: 1rem;
+  border: 1px solid;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  width: 100%;
+  gap: 1.5rem;
+  max-width: 32rem;
+  position: relative;
+}
+
+.wordColumn {
+  display: flex;
+  gap: 0.75rem;
+  flex-direction: column;
+  width: 100%;
+}
+
+.wordRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.wordNumber {
+  width: 0.75rem;
+  font-size: 1rem;
+  letter-spacing: -0.18px;
+  line-height: 24px;
+}
+
+.word {
+  width: 100%;
+  border-bottom: 1px solid;
+
+  div {
+    color: #373737;
+    width: 100%;
+    font-weight: 400;
+    line-height: 24px;
+    font-family: monospace;
+    font-size: 1rem;
+  }
+
+  @media print {
+    div {
+      opacity: 1 !important;
+      filter: blur(0px) !important;
+    }
+  }
+}
+
+.notesContainer {
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+  padding: 0 3rem;
+}
+
+.notesColumn {
+  padding: 0.5rem;
+  max-width: 42rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.noteLine {
+  width: 100%;
+  border-bottom: 1px solid;
+}
+
+.footer {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 2.5rem;
+}
+
+.footerItem {
+  display: flex;
+  align-items: center;
+}
+
+.versionTag {
+  padding: 0.125rem 0.25rem;
+  border: 1px solid;
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+  font-family: monospace;
+}
